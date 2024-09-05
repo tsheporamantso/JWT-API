@@ -95,7 +95,7 @@ Clone this repository to your desired folder:
 ```sh
   mkdir nodejs
   cd nodejs
-  git clone git@github.com:tsheporamantso/aliens.git
+  git clone git@github.com:tsheporamantso/JWT-API.git
 ```
 
 ### Install
