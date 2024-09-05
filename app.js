@@ -1,12 +1,12 @@
 const express = require('express');
-const mainRouter = require('./routes/main');
+const mainRoute = require('./routes/main');
 require('dotenv').config();
 
 const app = express();
 
 app.use(express.static('./public'));
 
-app.use('/api/v1', mainRouter);
+app.use('/api/v1', mainRoute);
 
 const { PORT } = process.env || 3000;
 const start = () => {
