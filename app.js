@@ -3,6 +3,7 @@ const mainRoute = require('./routes/main');
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 require('dotenv').config();
+require('express-async-errors');
 
 const app = express();
 
