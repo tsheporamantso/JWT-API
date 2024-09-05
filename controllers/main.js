@@ -1,9 +1,28 @@
-const login = async (req, res) => {
-  res.status(200).json({ msg: 'login' });
-};
+const jwt = require('jsonwebtoken');
+const { StatusCodes } = require('http-status-codes');
+const { BadRequestError } = require('../errors');
 
+const login = async (req, res) => {
+  const { username, password } = req.body;
+  if (username || password) {
+    const id = new Date().getDate();
+
+    const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
+      expiresIn: '30d',
+    });
+    res.status(StatusCodes.OK).json({ msg: 'user created', token });
+  } else {
+    throw new BadRequestError('Please provide username and password');
+  }
+};
 const dashboard = async (req, res) => {
-  res.status(200).json({ msg: 'dashboard' });
+  const luckyNumber = Math.floor(Math.random() * 100 + 1);
+  res
+    .status(StatusCodes.OK)
+    .json({
+      msg: 'Hello Dumi',
+      secret: `Here is your Auth Data, and your lucky number is ${luckyNumber}`,
+    });
 };
 
 module.exports = {
