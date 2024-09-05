@@ -31,7 +31,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 JWT 🔒E 🛍️<a name="about-project"></a>
+# 📖 JWT 🔒<a name="about-project"></a>
 
 **JWT 🔒** JavaScript Object Notation Web Token configurations, with ExpressJS
 
