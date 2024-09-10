@@ -8,7 +8,7 @@ const login = async (req, res) => {
     const id = new Date().getDate();
 
     const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
-      expiresIn: '30d',
+      expiresIn: process.env.JWT_TIMELINE,
     });
     res.status(StatusCodes.OK).json({ msg: 'user created', token });
   } else {
@@ -17,12 +17,10 @@ const login = async (req, res) => {
 };
 const dashboard = async (req, res) => {
   const luckyNumber = Math.floor(Math.random() * 100 + 1);
-  res
-    .status(StatusCodes.OK)
-    .json({
-      msg: 'Hello Dumi',
-      secret: `Here is your Auth Data, and your lucky number is ${luckyNumber}`,
-    });
+  res.status(StatusCodes.OK).json({
+    msg: 'Hello Dumi',
+    secret: `Here is your Auth Data, and your lucky number is ${luckyNumber}`,
+  });
 };
 
 module.exports = {
