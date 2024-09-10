@@ -19,7 +19,7 @@ const dashboard = async (req, res) => {
   const luckyNumber = Math.floor(Math.random() * 100 + 1);
   res.status(StatusCodes.OK).json({
     msg: 'Hello Dumi',
-    secret: `Here is your Auth Data, and your lucky number is ${luckyNumber}`,
+    secret: `Here is your authorized Data, and your lucky number is ${luckyNumber}`,
   });
 };
 
